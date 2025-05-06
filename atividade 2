@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main() {
+    const int NUM_ALUNOS = 10;
+    float notas[NUM_ALUNOS];
+    float soma = 0.0;
+
+    // Leitura das notas dos alunos
+    for (int i = 0; i < NUM_ALUNOS; ++i) {
+        std::cout << "Digite a nota do aluno " << i + 1 << ": ";
+        std::cin >> notas[i];
+        soma += notas[i];
+    }
+
+    // Cálculo da média
+    float media = soma / NUM_ALUNOS;
+
+    // Contagem de alunos com nota acima da média
+    int acima_da_media = 0;
+    for (int i = 0; i < NUM_ALUNOS; ++i) {
+        if (notas[i] > media) {
+            ++acima_da_media;
+        }
+    }
+
+    // Exibição dos resultados
+    std::cout << "\nMédia da turma: " << media << std::endl;
+    std::cout << "Número de alunos com nota acima da média: " << acima_da_media << std::endl;
+
+    return 0;
+}
