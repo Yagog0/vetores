@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int TAMANHO = 5;
+    int vetor[5];
+
+    // Leitura dos valores do vetor
+    for (int i = 0; i < TAMANHO; ++i) {
+        cout << "Digite o valor para a posição " << i << ": ";
+        cin >> vetor[i];
+    }
+
+    // Variáveis para contagem
+    int maior = 0, menor = 0, igual = 0;
+    int primeiro = vetor[0];
+
+    // Comparações com o primeiro elemento
+    for (int i = 1; i < TAMANHO; ++i) {
+        if (vetor[i] > primeiro) {
+            ++maior;
+        } else if (vetor[i] < primeiro) {
+            ++menor;
+        } else {
+            ++igual;
+        }
+    }
+
+    // Exibição dos resultados
+    cout << "\nComparando com o primeiro elemento (" << primeiro << "):\n";
+    cout << "Maiores que o primeiro: " << maior << endl;
+    cout << "Menores que o primeiro: " << menor << endl;
+    cout << "Iguais ao primeiro: " << igual << endl;
+
+    return 0;
+}
